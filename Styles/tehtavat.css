@@ -1,0 +1,25 @@
+#tehtavat {
+    background-color: #ac1750;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  nav:hover + #tehtavat {
+    opacity: 1;
+    
+  } 
+  #tehtavat:hover {
+    opacity: 1;
+  }
+  
+  #taskTitle  {
+    text-align: left;
+    font-size: 40px;
+  }
+  .ide  {
+    text-align: left;
+    color: #ee2065;
+    text-shadow: 0px 1px 1px #1f1e1e;
+    padding: 16px;
+    overflow-wrap: break-word;
+  }
+  
