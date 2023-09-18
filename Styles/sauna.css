@@ -1,0 +1,17 @@
+body    {
+  background-image: url(/Images/sauna.jpg), url(/Images/EFI0.gif);
+  background-size: 120%;
+  background-repeat: no-repeat, no-repeat; 
+  background-blend-mode:soft-light;
+  background-color: rgba(212, 207, 202, 0.603);
+  background-position: center;
+  background-position-y: 20px;
+}
+
+#smoke  {
+  opacity: 40%;
+  width: 900px;
+  transform: translateY(-50px) translateX(150px);
+}
+
+
