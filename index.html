@@ -1,37 +1,173 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Etusivu</title>
-        <link rel="stylesheet" href="Styles/styles.css">
-        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    </head>
-    <body>
-        <header>
-            <div class="fullImage">
-            <img class="bgImg" src="/Images/programmingBgThin.jpg">
-            <h1>Etusivu</h1>
-        </div>
-        </header>
-        <nav>
-            <ul id="navbar">
-              <li><a href="/index.html" id="currentSite">Etusivu</a></li>
-              <li><a href="/Pages/peli1.html">Klikkauspeli</a></li>
-              <li><a href="/Pages/tehtavat.html">Tehtävät</a></li>
-              <li><a href="/Pages/sauna.html">Sauna</a></li>
-            </ul>
-          </nav>
-        <main>
-            <p>
-                Ei vielä läheskään valmis.
-            </p>
-        </main>
-        <footer>
-            <div class="container">
-            <a href="https://github.com/m4llu">GitHub</a>
-            <p>Don't look at the source code, It's terrible :D</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Changa</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+      <ul>
+        <li><a href="#home" class="selected-page">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Logo that will shrink and move -->
+      <div class="logo-container">
+        <img src="CHANGA.png" alt="Logo" class="logo" id="logo">
+        <h2 class="logo-phrase">Listen to the voices.</h2>
+      </div>
+    </nav>
+    
+    <main> 
+        <div class="banner">
+          <div class="align-center-container">
+            <div class="banner-text-container">
+              <div class="top">
+                <div class="top-start">
+                  THE
+                </div>
+                <div class="top-end" data-key="kanye">
+                  KANYE WEST
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="bottom-start">
+                </div>
+                <div class="bottom-end">
+                COLLECTION
+                </div>
+              </div>
+              <div class="paragraph">
+                <p>Äijän leuka meni lattiiaan asti ( BOOOUUUUUU )</p></div>
             </div>
-        </footer>
-    </body>
+            <img src="./image 26.svg" alt="Kanye West" class="banner-image">
+          </div>
+    
+        </div>
+        <div class="container">
+          <div class="item-list">
+            <div class="item">
+              <div class="cover-container">
+                <img src="./travi.jpeg">
+              </div>
+              <div>
+                <h3>Dravic Sgod</h3>
+                <h4>Fin fin fein fien fiin</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye3.jpg">
+              </div>
+              <div>
+                <h3>Kanye East</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye2.jpg">
+              </div>
+              <div>
+                <h3>Kanye South</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye4.jpg">
+              </div>
+              <div>
+                <h3>Kanye West</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye.jpg">
+              </div>
+              <div>
+                <h3>Kanye North</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye3.jpg">
+              </div>
+              <div>
+                <h3>Kanye East</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye2.jpg">
+              </div>
+              <div>
+                <h3>Kanye South</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+            <div class="item">
+              <div class="cover-container">
+                <img src="./kanye4.jpg">
+              </div>
+              <div>
+                <h3>Kanye West</h3>
+                <h4>Old Town Road</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the home section.</p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This is the about section.</p>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <p>This is the services section.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>This is the contact section.</p>
+        </section>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the home section.</p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This is the about section.</p>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <p>This is the services section.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>This is the contact section.</p>
+        </section>
+    </main>
+	
+    <script src="index.js"></script>
+  </body>
 </html>
