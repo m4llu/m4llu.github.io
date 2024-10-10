@@ -1,0 +1,85 @@
+/* Smooth transition for height and opacity */
+.start-menu {
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;  /* Ensure no content overflows when menu is closed */
+    height: 0;  /* Default closed state */
+    opacity: 0; /* Default hidden state */
+}
+
+/* Keyframe for opening the start menu */
+@keyframes openStartMenu {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 600px;
+        opacity: 1;
+    }
+}
+
+/* Keyframe for closing the start menu */
+@keyframes closeStartMenu {
+    from {
+        height: 600px;
+        opacity: 1;
+    }
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* When the start menu is opening */
+.start-menu.opening {
+    animation: openStartMenu 0.15s forwards;
+    height: 600px; /* Ensure it stays open after the animation */
+    opacity: 1;
+}
+
+/* When the start menu is closing */
+.start-menu.closing {
+    animation: closeStartMenu 0.15s forwards;
+    height: 0; /* Ensure it stays closed after the animation */
+    opacity: 0;
+}
+
+/* Style for the start menu content */
+.start-menu-content {
+    padding: 10px;
+    transform: translateY(-150px);
+    opacity: 0;
+    animation: fadeInContent 0.3s forwards 0.3s; /* Delay the entire menu content fade-in */
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add a slight delay to each menu item based on its index */
+.menu-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

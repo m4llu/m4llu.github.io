@@ -10,6 +10,7 @@ body, html {
     height: 100%;
     overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
 }
 
 /* Desktop background */
@@ -19,16 +20,27 @@ body, html {
     background-position: center;
     width: 100%;
     height: 100%;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px); /* Adjust icon column size */
+    grid-auto-rows: 100px; /* Adjust row height */
+    gap: 1px; /* Space between icons */
+    padding: 10px;
+    box-sizing: border-box;
     color: white;
 }
 
 /* Desktop icons */
 .icon {
     width: 80px;
-    position: absolute;
-    text-align: center;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    transition: background-color 0.1s, border-color 0.2s;
 }
 
 .icon img {
@@ -41,6 +53,20 @@ body, html {
     margin-top: 5px;
     font-size: 12px;
     text-shadow: 1px 1px 2px #000;
+}
+
+.icon:hover {
+    border: 2px solid #95c3e65f; /* Blue border */
+    background-color: #a1b1bd56;
+}
+/* Style for the selected icon (blue rectangle around it) */
+.icon.selected {
+    border: 2px solid #2897ebb6; /* Blue border */
+    background-color: #1a8fe899;
+}
+
+.icon :nth-child(1) {
+    z-index: 1;
 }
 
 /* Window styles */
@@ -92,18 +118,32 @@ body, html {
     background-color: rgba(40, 40, 40, 0.9);
     position: absolute;
     bottom: 0;
+    left: 0;
     display: flex;
     align-items: center;
     z-index: 1000;
 }
 
-.start-button {
-    width: 60px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.taskbar-icons > div:hover, .start-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.taskbar-icons > div, .start-button {
+    height: 40px;
+    width: 50px;
+    display: grid;
+    place-items: center;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.taskbar-icon img, .taskbar-icon img:hover {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: transparent;
+    object-fit: cover;
 }
 
 .start-button img {
@@ -125,18 +165,44 @@ body, html {
     margin-right: 10px;
 }
 
-/* Start menu styles */
-.start-menu {
-    width: 250px;
-    height: 400px;
+.start-menu { 
+    width: 400px;
+    height: 0; /* Initial height is 0 */
+    overflow: hidden; /* Prevent overflow during animation */
     background-color: rgba(30, 30, 30, 0.95);
     position: absolute;
     bottom: 40px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
     left: 0;
-    display: none;
     color: white;
     z-index: 1001;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: height 0.3s ease;
+}
+
+.start-menu.closing {
+    height: 0;
+    overflow: hidden;
+}
+.start-menu .sidebar-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents content from spilling out of bounds */
+    transition: width 0.3s ease-in 0.3s;
+}
+
+.start-menu .sidebar-wrapper.opened {
+    width: 250px;
+    background-color: #000;
+}
+
+
+.start-menu .sidebar {
+    height: 100%;
+    width: 100%; /* Default width */
+    background-color: transparent;
+    transition: background-color 0.5s ease-in 0.1s, width 0.3s ease-in 0.3s;
 }
 
 .start-menu-content {
@@ -159,10 +225,6 @@ body, html {
         width: 90%;
         height: 70%;
         left: 5%;
-    }
-
-    .icon {
-        width: 60px;
     }
 
     .icon img {
