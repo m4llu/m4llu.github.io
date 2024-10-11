@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0.2rem;
+  background: var(--color-background);
 }
 
 .context-menu ul ul {
@@ -37,6 +38,11 @@
   padding-inline: 1rem;
   align-self: stretch;
   width: 290px;
+}
+.context-menu ul .disabled, .context-menu ul .disabled:hover {
+  background-color: var(--color-background);
+  color: #999999;
+  cursor:auto;
 }
 
 .context-menu ul li .icon-container {
