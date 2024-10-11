@@ -7,94 +7,26 @@
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="window.css">
     <link rel="stylesheet" href="contextMenu.css">
-
+    <link rel="stylesheet" href="notepad.css">
+    <link rel="stylesheet" href="settings.css">
 </head>
 <body>
     <!-- Desktop Background -->
     <div class="desktop" id="desktop">
         <!-- Desktop Icons -->
-        <div class="icon" style="top: 50px; left: 50px;" data-window="about">
+        <div class="icon" style="top: 50px; left: 50px;" data-program="about">
             <img src="./assets/icons/folder.png" alt="About Me">
             <span>About Me</span>
         </div>
-        <div class="icon" style="top: 50px; left: 150px;" data-window="projects">
+        <div class="icon" style="top: 50px; left: 150px;" data-program="projects">
             <img src="./assets/icons/folder.png" alt="Projects">
             <span>Projects</span>
         </div>
-        <div class="icon" style="top: 150px; left: 50px;" data-window="skills">
-            <img src="./assets/icons/folder.png" alt="Skills">
-            <span>Skills</span>
-        </div>
-        <div class="icon" style="top: 150px; left: 150px;" data-window="contact">
-            <img src="./assets/icons/folder.png" alt="Contact">
-            <span>Contact</span>
-        </div>
-        
-
-        <!-- Windows -->
-        <div id="about" class="window">
-            <div class="window-title-bar">
-                <span>About Me</span>
-                <div class="window-controls">
-                    <button onclick="minimizeWindow('about')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button id="maximizeButton" onclick="maximizeWindow('about')" style="padding-bottom: 0.2rem;">🗖</button>
-                    <button id="restoreButton" onclick="restoreWindow('about')" style="padding-bottom: 0.2rem;">🗗</button>
-                    <button class="button-close" onclick="closeWindow('about')">✕</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <h1>About Me</h1>
-                <p>Your about me content goes here.</p>
-            </div>
-        </div>
-
-        <div id="projects" class="window">
-            <div class="window-title-bar">
-                <span>Projects</span>
-                <div class="window-controls">
-                    <button onclick="minimizeWindow('projects')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button id="maximizeButton" onclick="maximizeWindow('projects')" style="padding-bottom: 0.2rem;">🗖</button>
-                    <button id="restoreButton" onclick="restoreWindow('projects')" style="padding-bottom: 0.2rem;">🗗</button>
-                    <button class="button-close" onclick="closeWindow('projects')">✕</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <h1>Projects</h1>
-                <p>Your projects content goes here.</p>
-            </div>
-        </div>
-
-        <div id="skills" class="window">
-            <div class="window-title-bar">
-                <span>Skills</span>
-                <div class="window-controls">
-                    <button onclick="minimizeWindow('skills')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button id="maximizeButton" onclick="maximizeWindow('skills')" style="padding-bottom: 0.2rem;">🗖</button>
-                    <button id="restoreButton" onclick="restoreWindow('skills')" style="padding-bottom: 0.2rem;">🗗</button>
-                    <button class="button-close" onclick="closeWindow('skills')">✕</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <h1>Skills</h1>
-                <p>Your skills content goes here.</p>
-            </div>
-        </div>
-
-        <div id="contact" class="window">
-            <div class="window-title-bar">
-                <span>Contact</span>
-                <div class="window-controls">
-                    <button onclick="minimizeWindow('contact')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button class="maximize-button" onclick="maximizeWindow('contact')" style="padding-bottom: 0.2rem;">🗖</button>
-                    <button class="restore-button" onclick="restoreWindow('contact')" style="padding-bottom: 0.2rem;">🗗</button>
-                    <button class="button-close" onclick="closeWindow('contact')">✕</button>
-                </div>            
-            </div>
-            <div class="window-content">
-                <h1>Contact</h1>
-                <p>Your contact information goes here.</p>
-            </div>
-        </div>
+        <div class="icon" data-program="settings" data-window="settings">
+            <img src="./assets/icons/settings.png" alt="Settings Icon">
+            <span>Settings</span>
+          </div>
+          
 
         <!-- Taskbar -->
         <div class="taskbar">

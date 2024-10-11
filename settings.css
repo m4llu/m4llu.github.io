@@ -1,0 +1,27 @@
+#theme-select {
+  margin: 10px 0;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.wallpaper-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.wallpaper-preview {
+  border: 2px solid #ddd;
+  padding: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.wallpaper-preview img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.wallpaper-preview:hover {
+  border-color: #333;
+}

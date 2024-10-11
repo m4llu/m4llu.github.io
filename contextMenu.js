@@ -32,10 +32,11 @@ function initContextMenu() {
   });
 
   function createNewFile() {
-      let fileName = getUniqueFileName();
+      let fileName = getUniqueFileName() + '.txt';
       
       const newFile = document.createElement('div');
       newFile.classList.add('icon');
+      newFile.dataset.program = 'notepad';
       newFile.style.top = '100px';
       newFile.style.left = '100px'; 
       newFile.innerHTML = `
@@ -44,7 +45,8 @@ function initContextMenu() {
       `;
       
       desktop.appendChild(newFile);
-
+    console.log('file created', newFile);
+    handleIconClicks();
       const fileNameElement = newFile.querySelector('.file-name');
 
       fileNameElement.addEventListener('dblclick', function () {
