@@ -5,6 +5,7 @@
     <title>My Portfolio - Windows 10 Desktop Style</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="window.css">
 
 </head>
 <body>
@@ -33,7 +34,11 @@
         <div id="about" class="window">
             <div class="window-title-bar">
                 <span>About Me</span>
-                <button onclick="closeWindow('about')">✖</button>
+                <div class="window-controls">
+                    <button onclick="minimize('about')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button onclick="maximize('about')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button class="button-close" onclick="closeWindow('about')">✕</button>
+                </div>
             </div>
             <div class="window-content">
                 <h1>About Me</h1>
@@ -44,7 +49,11 @@
         <div id="projects" class="window">
             <div class="window-title-bar">
                 <span>Projects</span>
-                <button onclick="closeWindow('projects')">✖</button>
+                <div class="window-controls">
+                    <button onclick="minimize('projects')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button onclick="maximize('projects')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button class="button-close" onclick="closeWindow('projects')">✕</button>
+                </div>
             </div>
             <div class="window-content">
                 <h1>Projects</h1>
@@ -55,7 +64,11 @@
         <div id="skills" class="window">
             <div class="window-title-bar">
                 <span>Skills</span>
-                <button onclick="closeWindow('skills')">✖</button>
+                <div class="window-controls">
+                    <button onclick="minimize('skills')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button onclick="maximize('skills')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button class="button-close" onclick="closeWindow('skills')">✕</button>
+                </div>
             </div>
             <div class="window-content">
                 <h1>Skills</h1>
@@ -66,7 +79,11 @@
         <div id="contact" class="window">
             <div class="window-title-bar">
                 <span>Contact</span>
-                <button onclick="closeWindow('contact')">✖</button>
+                <div class="window-controls">
+                    <button onclick="minimize('contact')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button onclick="maximize('contact')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button class="button-close" onclick="closeWindow('contact')">✕</button>
+                </div>            
             </div>
             <div class="window-content">
                 <h1>Contact</h1>
@@ -94,13 +111,21 @@
 
         <!-- Start Menu -->
         <div id="start-menu" class="start-menu">
-            <div class="sidebar-wrapper" id="sidebar-wrapper" onmouseenter="openSidebar()">
+            <div class="sidebar-wrapper closed" id="sidebar-wrapper" onmouseenter="openSidebar()">
                 <div class="sidebar">
                     <div class="sidebar-items">
-                        <div class="sidebar-item" onclick="openWindow('about')">About Me</div>
-                        <div class="sidebar-item" onclick="openWindow('projects')">Projects</div>
-                        <div class="sidebar-item" onclick="openWindow('skills')">Skills</div>
-                        <div class="sidebar-item" onclick="openWindow('contact')">Contact</div>
+                        <div class="sidebar-item" onclick="openWindow('contact')">
+                            <div class="sidebar-item-icon">
+                                <img class="round-icon" src="user.png" alt="user">
+                            </div>
+                            m4llu
+                        </div>
+                        <div class="sidebar-item" onclick="openWindow('contact')">
+                            <div class="sidebar-item-icon">
+                                <img src="contact.png" alt="Contact">
+                            </div>
+                            Files
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,6 +138,11 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="clock.js"></script>
+    <script src="window.js"></script>
+    <script src="clickHandler.js"></script>
+    <script src="startMenu.js"></script>
+    <script src="main.js"></script>
+
 </body>
 </html>

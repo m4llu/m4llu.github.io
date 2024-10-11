@@ -1,0 +1,108 @@
+.window {
+  width: 600px;
+  height: 400px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.window-title-bar {
+  background: linear-gradient(to top, #e9e9e90a, #dfdfdf10);
+  color: rgb(29, 29, 29);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.8rem;
+}
+
+.window-title-bar span {
+  padding-left: 0.7rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.window-controls {
+  display: flex;
+  height: 100%;
+}
+
+.window-title-bar .window-controls button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: none;
+  border: none;
+  color: rgb(29, 29, 29);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  transition: background-color 0.2s;
+  height: 100%;
+}
+
+.window-title-bar .window-controls .button-close:hover {
+  background-color: #ff5f56;
+  color: #fff;
+}
+
+.button-close:hover {
+  background-color: #ff5f56;
+}
+
+.window-title-bar button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.window-content {
+  padding: 10px;
+  overflow: auto;
+  flex-grow: 1;
+  color: #000;
+}
+
+
+.resizers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.resizer {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  z-index: 10;
+}
+
+.resizer.top-left {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+
+.resizer.top-right {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+
+.resizer.bottom-left {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+
+.resizer.bottom-right {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}

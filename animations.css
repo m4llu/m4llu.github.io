@@ -30,6 +30,45 @@
     }
 }
 
+.start-menu .sidebar-wrapper.opened {
+    animation: openSidebar 0.4s ease-in 0.3s forwards;
+}
+
+.start-menu .sidebar-wrapper .closed {
+    animation: closeSidebar 0.4s ease-in 0.2s forwards;
+}
+
+@keyframes openSidebar {
+    from {
+        width: 50px;
+    }
+    20% {
+        background: linear-gradient(to right, #282a2c, #2d3338);
+        width: 70px;
+    }
+    70% {
+        width: 120px;
+    }
+    to {
+        width: 250px;
+        background: linear-gradient(to right, #282a2c, #2d3338);
+        box-shadow: 1px 0px 8px #0000003d;
+    }
+}
+
+
+@keyframes closeSidebar {
+    from {
+        width: 250px;
+        background: linear-gradient(to right, #282a2c, #2d3338);
+        box-shadow: 1px 0px 8px #0000003d;
+    }
+    to {
+        width: 50px;
+        background: none;
+    }
+}
+
 /* When the start menu is opening */
 .start-menu.opening {
     animation: openStartMenu 0.15s forwards;
