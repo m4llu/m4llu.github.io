@@ -1,0 +1,21 @@
+:root {
+  /* Transition Speeds */
+  --transition-fast: 0.15s;
+  --transition-medium: 0.25s;
+  --transition-slow: 1s;
+
+  /* Windows 10 System Colors */
+  --color-background: rgba(30, 30, 30, 0.95);
+  --color-background-light: rgba(40, 40, 40, 0.95);
+  --color-text: #000000;
+  --color-accent: #0078d7;
+  --color-accent-light: #c7e0f4;
+  --color-accent-dark: #004578;
+  --color-border: #dcdcdc;
+  --color-hover: #e5e5e5;
+  --color-active: #c8c8c8;
+  --color-disabled: #a6a6a6;
+  --color-error: #e81123;
+  --color-warning: #ffb900;
+  --color-success: #107c10;
+}

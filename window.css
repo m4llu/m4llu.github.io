@@ -1,3 +1,4 @@
+@import url(/variables.css);
 .window {
   width: 600px;
   height: 400px;
@@ -23,7 +24,6 @@
   padding-left: 0.7rem;
   font-weight: 400;
   font-size: 0.9rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .window-controls {
@@ -32,7 +32,6 @@
 }
 
 .window-title-bar .window-controls button {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: none;
   border: none;
   color: rgb(29, 29, 29);
@@ -53,11 +52,9 @@
   background-color: #ff5f56;
 }
 
-.window-title-bar button:hover {
+.window-title-bar .window-controls button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-
-
 
 .window-content {
   padding: 10px;
@@ -65,7 +62,6 @@
   flex-grow: 1;
   color: #000;
 }
-
 
 .resizers {
   position: absolute;

@@ -1,6 +1,7 @@
-/* Reset default browser styles */
+@import url(/variables.css);
 * {
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body, html {
@@ -15,7 +16,7 @@ body, html {
 
 /* Desktop background */
 .desktop {
-    background-image: url('wallpaper.jpg');
+    background-image: url('/assets/wallpapers/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -32,18 +33,18 @@ body, html {
 /* Desktop icons */
 .icon {
     width: 80px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 90px;
+    display: grid;
+    grid-template-rows: 55px 1fr;
+    place-items: center;
     cursor: pointer;
     box-sizing: border-box;
     border: 2px solid transparent;
-    transition: background-color 0.1s, border-color 0.2s;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .icon img {
+    margin-inline: auto;
     width: 48px;
     height: 48px;
 }
@@ -53,6 +54,34 @@ body, html {
     margin-top: 5px;
     font-size: 12px;
     text-shadow: 1px 1px 2px #000;
+    text-align: center;
+    text-wrap: wrap;
+    overflow: hidden;
+    width:  80px;
+    height: 100%;
+}
+
+.icon textarea {
+    display: block;
+    z-index: 1005;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #000;
+    padding: 0;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: min-content;
+    text-wrap: wrap;
+    scrollbar-width: none;
+    resize: none;
+}
+
+.icon textarea:focus {
+    outline: none;
 }
 
 .icon:hover {
@@ -92,7 +121,7 @@ body, html {
     display: grid;
     place-items: center;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color var(--transition-fast);
 }
 
 .taskbar-icon img, .taskbar-icon img:hover {
@@ -125,8 +154,8 @@ body, html {
 
 .start-menu { 
     width: 400px;
-    height: 0; /* Initial height is 0 */
-    overflow: hidden; /* Prevent overflow during animation */
+    height: 0;
+    overflow: hidden; 
     background-color: rgba(30, 30, 30, 0.95);
     position: absolute;
     bottom: 40px;
@@ -136,7 +165,7 @@ body, html {
     color: white;
     z-index: 1001;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    transition: height 0.3s ease;
+    transition: height var(--transition-medium) ease;
 }
 
 .start-menu.closing {
@@ -154,13 +183,20 @@ body, html {
     height: 100%;
     width: 100%; /* Default width */
     background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-buttons {
     display: grid;
     grid-template-rows: repeat(50px);
-    align-items: end;
+    align-items: start;
 }
 
 .sidebar-item {
     width: 250px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -169,6 +205,7 @@ body, html {
 
 .sidebar-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
 .sidebar-item-icon {
@@ -183,6 +220,10 @@ body, html {
     width: 22px;
     height: 22px;
     margin: 0;
+}
+
+.sidebar-item.top {
+    font-weight: 600;
 }
 
 .round-icon {

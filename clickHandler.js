@@ -21,12 +21,3 @@ function handleIconClicks() {
 function deselectAllIcons() {
   document.querySelectorAll('.icon.selected').forEach(icon => icon.classList.remove('selected'));
 }
-
-function openWindow(id) {
-  const windowElement = document.getElementById(id);
-  if (windowElement) {
-      windowElement.style.display = 'flex';
-      bringWindowToFront(windowElement);  // from draggable.js
-      closeStartMenu();                   // from menu.js
-  }
-}

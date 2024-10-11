@@ -22,8 +22,11 @@ function closeStartMenu() {
 }
 
 document.addEventListener('mousemove', (event) => {
-  if (event.clientX > 250) {
+  if (event.clientX > 250 || event.clientY > window.innerHeight - 50 || event.clientY < window.innerHeight - 650) {
     closeSidebar();
+  }
+  else if (event.clientX < 50) {
+    openSidebar();
   }
 });
 

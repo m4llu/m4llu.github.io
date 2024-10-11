@@ -6,26 +6,27 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="window.css">
+    <link rel="stylesheet" href="contextMenu.css">
 
 </head>
 <body>
     <!-- Desktop Background -->
-    <div class="desktop">
+    <div class="desktop" id="desktop">
         <!-- Desktop Icons -->
         <div class="icon" style="top: 50px; left: 50px;" data-window="about">
-            <img src="folder.png" alt="About Me">
+            <img src="./assets/icons/folder.png" alt="About Me">
             <span>About Me</span>
         </div>
         <div class="icon" style="top: 50px; left: 150px;" data-window="projects">
-            <img src="folder.png" alt="Projects">
+            <img src="./assets/icons/folder.png" alt="Projects">
             <span>Projects</span>
         </div>
         <div class="icon" style="top: 150px; left: 50px;" data-window="skills">
-            <img src="folder.png" alt="Skills">
+            <img src="./assets/icons/folder.png" alt="Skills">
             <span>Skills</span>
         </div>
         <div class="icon" style="top: 150px; left: 150px;" data-window="contact">
-            <img src="folder.png" alt="Contact">
+            <img src="./assets/icons/folder.png" alt="Contact">
             <span>Contact</span>
         </div>
         
@@ -35,8 +36,9 @@
             <div class="window-title-bar">
                 <span>About Me</span>
                 <div class="window-controls">
-                    <button onclick="minimize('about')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button onclick="maximize('about')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button onclick="minimizeWindow('about')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button id="maximizeButton" onclick="maximizeWindow('about')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button id="restoreButton" onclick="restoreWindow('about')" style="padding-bottom: 0.2rem;">🗗</button>
                     <button class="button-close" onclick="closeWindow('about')">✕</button>
                 </div>
             </div>
@@ -50,8 +52,9 @@
             <div class="window-title-bar">
                 <span>Projects</span>
                 <div class="window-controls">
-                    <button onclick="minimize('projects')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button onclick="maximize('projects')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button onclick="minimizeWindow('projects')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button id="maximizeButton" onclick="maximizeWindow('projects')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button id="restoreButton" onclick="restoreWindow('projects')" style="padding-bottom: 0.2rem;">🗗</button>
                     <button class="button-close" onclick="closeWindow('projects')">✕</button>
                 </div>
             </div>
@@ -65,8 +68,9 @@
             <div class="window-title-bar">
                 <span>Skills</span>
                 <div class="window-controls">
-                    <button onclick="minimize('skills')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button onclick="maximize('skills')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button onclick="minimizeWindow('skills')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button id="maximizeButton" onclick="maximizeWindow('skills')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button id="restoreButton" onclick="restoreWindow('skills')" style="padding-bottom: 0.2rem;">🗗</button>
                     <button class="button-close" onclick="closeWindow('skills')">✕</button>
                 </div>
             </div>
@@ -80,8 +84,9 @@
             <div class="window-title-bar">
                 <span>Contact</span>
                 <div class="window-controls">
-                    <button onclick="minimize('contact')" style="padding-bottom: 0.6rem;">🗕</button>
-                    <button onclick="maximize('contact')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button onclick="minimizeWindow('contact')" style="padding-bottom: 0.6rem;">🗕</button>
+                    <button class="maximize-button" onclick="maximizeWindow('contact')" style="padding-bottom: 0.2rem;">🗖</button>
+                    <button class="restore-button" onclick="restoreWindow('contact')" style="padding-bottom: 0.2rem;">🗗</button>
                     <button class="button-close" onclick="closeWindow('contact')">✕</button>
                 </div>            
             </div>
@@ -94,14 +99,14 @@
         <!-- Taskbar -->
         <div class="taskbar">
             <div class="start-button" onclick="toggleStartMenu()">
-                <img src="windows-logo.png" alt="Start">
+                <img src="./assets/icons/windows-logo.png" alt="Start">
             </div>
             <div class="taskbar-icons">
                 <div class="taskbar-icon" onclick="openWindow('about')">
-                    <img src="chrome.png">
+                    <img src="./assets/icons/chrome.png">
                 </div>
                 <div class="taskbar-icon" onclick="openWindow('projects')">
-                    <img src="teams.png">
+                    <img src="./assets/icons/teams.png">
                 </div>
             </div>
             <div class="taskbar-clock">
@@ -113,16 +118,22 @@
         <div id="start-menu" class="start-menu">
             <div class="sidebar-wrapper closed" id="sidebar-wrapper" onmouseenter="openSidebar()">
                 <div class="sidebar">
-                    <div class="sidebar-items">
+                    <div class="sidebar-item top" onclick="openWindow('contact')">
+                        <div class="sidebar-item-icon">
+                            ☰
+                        </div>
+                        START
+                    </div>
+                    <div class="sidebar-buttons">
                         <div class="sidebar-item" onclick="openWindow('contact')">
                             <div class="sidebar-item-icon">
-                                <img class="round-icon" src="user.png" alt="user">
+                                <img class="round-icon" src="./assets/icons/user.png" alt="user">
                             </div>
                             m4llu
                         </div>
                         <div class="sidebar-item" onclick="openWindow('contact')">
                             <div class="sidebar-item-icon">
-                                <img src="contact.png" alt="Contact">
+                                <img src="./assets/icons/contact.png" alt="Contact">
                             </div>
                             Files
                         </div>
@@ -136,12 +147,34 @@
                 <div class="menu-item" onclick="openWindow('contact')">Contact</div>
             </div>
         </div>
+        <div id="context-menu" class="context-menu">
+            <ul>
+                <li id="new-file">
+                <div class="icon-container">
+                    <img src="./assets/icons/txt.png" alt="New File">
+                </div>
+                New File
+                </li>
+                <li id="new-file">
+                    <div class="icon-container">
+                        <img src="./assets/icons/folder.png" alt="New File">
+                    </div>
+                    New Folder
+                    </li>
+                <ul>
+                    <li id="new-file">Copy</li>
+                    <li id="new-file">Paste</li>
+                    <li id="new-file">Clipboard</li>
+                </ul>
+            </ul>
+        </div>
     </div>
 
     <script src="clock.js"></script>
     <script src="window.js"></script>
     <script src="clickHandler.js"></script>
     <script src="startMenu.js"></script>
+    <script src="contextMenu.js"></script>
     <script src="main.js"></script>
 
 </body>

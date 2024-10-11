@@ -59,6 +59,59 @@ function closeWindow(id) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initDraggableAndResizableWindows();
-});
+function openWindow(id) {
+  const windowElement = document.getElementById(id);
+  if (windowElement) {
+      windowElement.style.display = 'flex';
+      bringWindowToFront(windowElement);  // from draggable.js
+      closeStartMenu();                   // from menu.js
+      toggleMaximizeRestoreButtons(windowElement.id);
+  }
+}
+
+function maximizeWindow(id) {
+  const windowElement = document.getElementById(id);
+  if (windowElement) {
+    windowElement.dataset.originalStyle = windowElement.getAttribute('style') || '';
+    windowElement.style.top = '0';
+    windowElement.style.left = '0';
+    windowElement.style.width = `${window.innerWidth}px`;  // Set window width to viewport width in pixels
+    windowElement.style.height = `${window.innerHeight}px`;  // Set window height to viewport height in pixels
+    bringWindowToFront(windowElement);
+    toggleMaximizeRestoreButtons(windowElement.id);
+  }
+}
+
+function toggleMaximizeRestoreButtons(id) {
+  const window = document.getElementById(id);
+  const maximizeButton = window.querySelector('.maximize-button');
+  const restoreButton = window.querySelector('.restore-button');
+  
+  if (maximizeButton && restoreButton) {
+    if (window.innerWidth === '100vw' && window.innerHeight === '100vh') {
+      maximizeButton.style.display = 'none'; // Hide maximize button
+      restoreButton.style.display = 'block'; // Show restore button
+    } else {
+      maximizeButton.style.display = 'block'; // Show maximize button
+      restoreButton.style.display = 'none'; // Hide restore button
+    }
+  }
+}
+
+
+function restoreWindow(id) {
+  const windowElement = document.getElementById(id);
+  if (windowElement && windowElement.dataset.originalStyle) {
+    windowElement.setAttribute('style', windowElement.dataset.originalStyle);
+    delete windowElement.dataset.originalStyle;
+    bringWindowToFront(windowElement);
+    toggleMaximizeRestoreButtons(windowElement.id);
+  }
+}
+
+function minimizeWindow(id) {
+  const windowElement = document.getElementById(id);
+  if (windowElement) {
+    windowElement.style.display = 'none'; // Hide the window
+  }
+}
