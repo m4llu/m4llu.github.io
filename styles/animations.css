@@ -1,4 +1,4 @@
-@import url(/variables.css);
+@import url(./variables.css);
 .start-menu {
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     overflow: hidden;

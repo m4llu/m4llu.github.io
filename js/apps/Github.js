@@ -3,7 +3,6 @@ export const backgroundColor = "#0d1117";
 export const foregroundColor = "#c9d1d9";
 export const content = `
     <h2>@m4llu</h2>
-    <p>I'm a 17 year old software development student from Finland.</p>
     <p>Here are some of the public projects from my GitHub.</p>
     <div id="projects">
         Loading projects...

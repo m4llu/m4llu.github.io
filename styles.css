@@ -1,4 +1,4 @@
-@import url(/variables.css);
+@import url(./styles/variables.css);
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -1,4 +1,4 @@
-@import url(/variables.css);
+@import url(./variables.css);
 .context-menu {
   display: none;
   position: absolute;

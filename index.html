@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <title>My Portfolio - Windows 10 Desktop Style</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animations.css">
-    <link rel="stylesheet" href="window.css">
-    <link rel="stylesheet" href="contextMenu.css">
-    <link rel="stylesheet" href="notepad.css">
-    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/window.css">
+    <link rel="stylesheet" href="./styles/contextMenu.css">
+    <link rel="stylesheet" href="./styles/notepad.css">
+    <link rel="stylesheet" href="./styles/settings.css">
+    <link rel="stylesheet" href="./styles/MyPortfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="desktop" id="desktop">
-        <div class="icon" style="top: 50px; left: 50px;" data-program="about">
-            <img src="./assets/icons/folder.png" alt="About Me">
-            <span>About Me</span>
+        <div class="icon" style="top: 50px; left: 50px;" data-program="MyPortfolio">
+            <img src="./assets/icons/chrome.png" alt="My Portfolio">
+            <span>My Portfolio</span>
         </div>
         <div class="icon" style="top: 50px; left: 150px;" data-program="Github">
-            <img src="./assets/icons/github.png" alt="Projects">
+            <img src="./assets/icons/github.png" alt="Github">
             <span>GitHub</span>
         </div>
-        <div class="icon" data-program="settings" data-window="settings">
+        <div class="icon" data-program="settings" data-program="settings">
             <img src="./assets/icons/settings.png" alt="Settings Icon">
             <span>Settings</span>
           </div>
@@ -30,10 +34,10 @@
                 <img src="./assets/icons/windows-logo.png" alt="Start">
             </div>
             <div class="taskbar-icons">
-                <div class="taskbar-icon" onclick="openWindow('about')">
+                <div class="taskbar-icon" data-program="Github">
                     <img src="./assets/icons/github.png">
                 </div>
-                <div class="taskbar-icon" onclick="openWindow('projects')">
+                <div class="taskbar-icon" data-program="">
                     <img src="./assets/icons/teams.png">
                 </div>
             </div>
@@ -58,18 +62,12 @@
                             </div>
                             m4llu
                         </div>
-                        <div class="sidebar-item" onclick="openWindow('contact')">
-                            <div class="sidebar-item-icon">
-                                <img src="./assets/icons/contact.png" alt="Contact">
-                            </div>
-                            Files
-                        </div>
+                  
                     </div>
                 </div>
             </div>
             <div class="start-menu-content">
-                <div class="menu-item" data-program="Github">Github</div>
-                <div class="menu-item" data-program="settings">Settings</div>
+               
             </div>
         </div>
         <div id="context-menu" class="context-menu">
