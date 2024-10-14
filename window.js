@@ -1,10 +1,12 @@
-function createWindow(programId, title, content) {
+function createWindow(programId, title, content, backgroundColor, foregroundColor) {
   let windowElement = document.getElementById(programId);
 
   if (!windowElement) {
     windowElement = document.createElement('div');
     windowElement.classList.add('window');
     windowElement.id = programId;
+    windowElement.style.backgroundColor = backgroundColor || '#f1f1f1';
+    windowElement.style.color = foregroundColor || '#000';
 
     windowElement.innerHTML = `
       <div class="window-title-bar">
@@ -34,16 +36,18 @@ async function openProgram(programId) {
   let existingWindow = document.getElementById(programId);
 
   if (!existingWindow) {
-    let title, content;
+    let title, content, backgroundColor, foregroundColor;
     try {
       const module = await import(`./js/apps/${programId}.js`);
       title = module.title;
       content = module.content;
+      backgroundColor = module.backgroundColor;
+      foregroundColor = module.foregroundColor;
     } catch (error) {
       console.error(`Failed to load program ${programId}:`, error);
       return;
     }
-    createWindow(programId, title, content);
+    createWindow(programId, title, content, backgroundColor, foregroundColor);
   } else {
     existingWindow.style.display = 'flex';
     bringWindowToFront(existingWindow);

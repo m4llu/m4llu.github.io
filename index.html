@@ -11,31 +11,27 @@
     <link rel="stylesheet" href="settings.css">
 </head>
 <body>
-    <!-- Desktop Background -->
     <div class="desktop" id="desktop">
-        <!-- Desktop Icons -->
         <div class="icon" style="top: 50px; left: 50px;" data-program="about">
             <img src="./assets/icons/folder.png" alt="About Me">
             <span>About Me</span>
         </div>
-        <div class="icon" style="top: 50px; left: 150px;" data-program="projects">
-            <img src="./assets/icons/folder.png" alt="Projects">
-            <span>Projects</span>
+        <div class="icon" style="top: 50px; left: 150px;" data-program="Github">
+            <img src="./assets/icons/github.png" alt="Projects">
+            <span>GitHub</span>
         </div>
         <div class="icon" data-program="settings" data-window="settings">
             <img src="./assets/icons/settings.png" alt="Settings Icon">
             <span>Settings</span>
           </div>
           
-
-        <!-- Taskbar -->
         <div class="taskbar">
             <div class="start-button" onclick="toggleStartMenu()">
                 <img src="./assets/icons/windows-logo.png" alt="Start">
             </div>
             <div class="taskbar-icons">
                 <div class="taskbar-icon" onclick="openWindow('about')">
-                    <img src="./assets/icons/chrome.png">
+                    <img src="./assets/icons/github.png">
                 </div>
                 <div class="taskbar-icon" onclick="openWindow('projects')">
                     <img src="./assets/icons/teams.png">
@@ -46,7 +42,6 @@
             </div>
         </div>
 
-        <!-- Start Menu -->
         <div id="start-menu" class="start-menu">
             <div class="sidebar-wrapper closed" id="sidebar-wrapper" onmouseenter="openSidebar()">
                 <div class="sidebar">
@@ -73,10 +68,8 @@
                 </div>
             </div>
             <div class="start-menu-content">
-                <div class="menu-item" onclick="openWindow('about')">About Me</div>
-                <div class="menu-item" onclick="openWindow('projects')">Projects</div>
-                <div class="menu-item" onclick="openWindow('skills')">Skills</div>
-                <div class="menu-item" onclick="openWindow('contact')">Contact</div>
+                <div class="menu-item" data-program="Github">Github</div>
+                <div class="menu-item" data-program="settings">Settings</div>
             </div>
         </div>
         <div id="context-menu" class="context-menu">
@@ -87,28 +80,28 @@
                 </div>
                 New File
                 </li>
-                <li id="new-file">
+                <li id="new-file" class="disabled">
                     <div class="icon-container">
                         <img src="./assets/icons/folder.png" alt="New File">
                     </div>
                     New Folder
                 </li>
-                <li id="new-file">
+                <li id="new-file" class="disabled">
                     <div class="icon-container">
                         <img src="./assets/icons/cmd.png" alt="New File">
                     </div>
                     Open in Windows Terminal
                 </li>
-                <li id="new-file">
+                <li id="new-file" class="disabled">
                     <div class="icon-container">
                         <img src="./assets/icons/visualstudio.png" alt="New File">
                     </div>
                     Open with Visual Studio
                 </li>
                 <ul>
-                    <li id="new-file">Copy</li>
+                    <li id="new-file" class="disabled">Copy</li>
                     <li id="new-file" class="disabled">Paste</li>
-                    <li id="new-file">Clipboard</li>
+                    <li id="new-file" class="disabled">Clipboard</li>
                 </ul>
             </ul>
         </div>

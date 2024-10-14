@@ -2,7 +2,6 @@
 .window {
   width: 600px;
   height: 400px;
-  background-color: #ffffff;
   position: absolute;
   top: 50px;
   left: 50px;
@@ -13,11 +12,10 @@
 
 .window-title-bar {
   background: linear-gradient(to top, #e9e9e90a, #dfdfdf10);
-  color: rgb(29, 29, 29);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 1.8rem;
+  height: 2rem;
 }
 
 .window-title-bar span {
@@ -34,7 +32,6 @@
 .window-title-bar .window-controls button {
   background: none;
   border: none;
-  color: rgb(29, 29, 29);
   font-size: 16px;
   cursor: pointer;
   padding: 0 1rem;
@@ -58,9 +55,8 @@
 
 .window-content {
   padding: 10px;
-  overflow: auto;
+  overflow: hidden;
   flex-grow: 1;
-  color: #000;
 }
 
 .resizers {
@@ -101,4 +97,24 @@
   bottom: -5px;
   right: -5px;
   cursor: nwse-resize;
+}
+
+#projects {
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  background-color: #151b23f2;
+  border-radius: 1vh;
+}
+
+.project-card {
+  background-color: #1e2a38;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

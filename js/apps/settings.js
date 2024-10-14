@@ -3,12 +3,14 @@ export const title = "Settings";
 export const content = `
   <div>
     <h1>Settings</h1>
-    <section>
+    <section style="opacity: 0.5;"> 
       <h2>Theme</h2>
       <select id="theme-select">
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </select>
+      </section>
+      <section>
       <h2>Wallpaper</h2>
       <div class="wallpaper-selector">
         <div class="wallpaper-preview" onclick="setWallpaper('./assets/wallpapers/wallpaper.jpg')">
